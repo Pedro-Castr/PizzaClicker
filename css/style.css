@@ -12,6 +12,7 @@ body {
 }
 
 header {
+    background-image: linear-gradient(to bottom, #0F1219, #0F1219, #0F1219, transparent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -73,4 +74,56 @@ header > h1 {
         opacity: 0;
         transform: translateY(-20px);
     }
+}
+
+#upgrades {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin: 50px 10px 0 10px;
+    height: 100px;
+}
+
+.upgrade-item {
+    display: flex;
+    background-color: whitesmoke;
+    height: 90px;
+    width: 85%;
+    border-radius: 20px;
+    border: 2px solid red;
+    margin: 5px;
+}
+
+.upgrade-item:hover {
+    background-color: rgb(216, 216, 216);
+    cursor: pointer;
+}
+
+.upgrade-item > .img > img {
+    height: 100%;
+    width: 80px;
+}
+
+.upgrade-item > .descricao {
+    padding: 5px 10px 0px 5px;
+    width: 60%;
+}
+
+.upgrade-item > .descricao > .nome {
+    font-size: 1.5em;
+}
+
+.upgrade-item > .descricao > .preco {
+    padding-top: 10px;
+    font-size: 2em;
+}
+
+.upgrade-item > .quantidade {
+    display: flex;
+    justify-content: center;
+    width: 40%;
+}
+
+.upgrade-item > .quantidade > .quant-item {
+    font-size: 3em;
 }
