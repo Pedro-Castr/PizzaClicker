@@ -7,12 +7,12 @@
 }
 
 body {
-    background-image: url(../Imagens/galaxyBG.jpeg);
+    background-image: url(../Imagens/backgroundPizza.jpg);
+    background-size: contain;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 header {
-    background-image: linear-gradient(to bottom, #0F1219, #0F1219, #0F1219, transparent);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -22,10 +22,10 @@ header {
 header > h1 {
     font-size: 2.2em;
     font-style: italic;
-    color: #5E35B1;
+    color: #ffffff;
 }
 
-#asteroide-container {
+#pizza-container {
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -37,23 +37,22 @@ header > h1 {
     margin-bottom: 10px;
 }
 
-#asteroide img {
-    animation: float 3s ease-in-out infinite;
+#pizza img {
+    animation: rotate 100s linear infinite;
+    margin: auto;
+    width: 70%;
     display: block;
     cursor: pointer;
     -webkit-user-drag: none;
 }
 
 
-@keyframes float {
+@keyframes rotate {
     0% {
-        transform: translateY(0px);
-    }
-    50% {
-        transform: translateY(-20px);
+        transform: rotate(0deg);
     }
     100% {
-        transform: translateY(0px);
+        transform: rotate(360deg);
     }
 }
 

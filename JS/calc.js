@@ -1,6 +1,6 @@
 let pontos = 0;
 
-document.getElementById('asteroide').addEventListener('click', function() {
+document.getElementById('pizza').addEventListener('click', function() {
     pontos++;
     document.getElementById('pontuacao').innerText = 'Pontos: ' + pontos;
 
