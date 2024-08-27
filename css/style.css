@@ -29,6 +29,7 @@ header > h1 {
     display: flex;
     flex-direction: column;
     align-items: center;
+    overflow: hidden;
 }
 
 #pontuacao {
@@ -85,44 +86,64 @@ header > h1 {
 
 .upgrade-item {
     display: flex;
+    align-items: center;
     background-color: whitesmoke;
     height: 90px;
     width: 85%;
     border-radius: 20px;
-    border: 2px solid red;
     margin: 5px;
+    transition: transform 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
 .upgrade-item:hover {
     background-color: rgb(216, 216, 216);
     cursor: pointer;
+    transform: scale(1.05);
+}
+
+.upgrade-item > .img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    padding: 0 10px;
 }
 
 .upgrade-item > .img > img {
     height: 100%;
-    width: 80px;
+    width: auto;
+    max-width: 80px;
 }
 
 .upgrade-item > .descricao {
-    padding: 5px 10px 0px 5px;
-    width: 60%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px 10px;
+    flex-grow: 1;
 }
 
 .upgrade-item > .descricao > .nome {
     font-size: 1.5em;
+    font-weight: bold;
+    color: #333;
 }
 
 .upgrade-item > .descricao > .preco {
     padding-top: 10px;
-    font-size: 2em;
+    font-size: 1.2em;
+    color: #666;
 }
 
 .upgrade-item > .quantidade {
     display: flex;
     justify-content: center;
-    width: 40%;
+    align-items: center;
+    width: 20%;
 }
 
 .upgrade-item > .quantidade > .quant-item {
-    font-size: 3em;
+    font-size: 2em;
+    font-weight: bold;
+    color: #333;
 }
