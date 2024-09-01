@@ -6,6 +6,11 @@
     box-sizing: border-box;
 }
 
+:root {
+    --vermelho: #9e1b1b;
+    --verde: #19b419;
+}
+
 body {
     background-image: url(../Imagens/backgroundPizza.jpg);
     background-size: contain;
@@ -35,7 +40,11 @@ header > h1 {
 #pontuacao {
     font-size: 24px;
     color: #ffffff;
-    margin-bottom: 10px;
+}
+
+#pps {
+    color: #ffffff;
+    font-size: 1.1em;
 }
 
 #pizza img {
@@ -126,13 +135,13 @@ header > h1 {
 .upgrade-item > .descricao > .nome {
     font-size: 1.5em;
     font-weight: bold;
-    color: #333;
+    color: var(--vermelho);
 }
 
 .upgrade-item > .descricao > .preco {
     padding-top: 10px;
     font-size: 1.2em;
-    color: #666;
+    color: var(--vermelho);
 }
 
 .upgrade-item > .quantidade {
@@ -145,5 +154,5 @@ header > h1 {
 .upgrade-item > .quantidade > .quant-item {
     font-size: 2em;
     font-weight: bold;
-    color: #333;
+    color: var(--vermelho);
 }
