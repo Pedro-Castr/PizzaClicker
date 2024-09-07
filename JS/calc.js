@@ -7,7 +7,7 @@ let pontos = 0;
 
 document.getElementById('pizza').addEventListener('click', function() {
     pontos++;
-    document.getElementById('pontuacao').innerText = 'Pontos: ' + pontos;
+    document.getElementById('pontuacao').innerText = 'Pontos: ' + truncarDuasCasasDecimais(pontos);
 
     // Cria o elemento para mostrar o valor adicionado
     const pontosGanhos = document.createElement('div');
@@ -36,12 +36,18 @@ upgradeItens.forEach(item => {
         let quantidade = this.querySelector(".quant-item").textContent;
         let preco = this.querySelector(".preco").textContent;
 
-        // Atualiza a quantidade do item
-        let quantidadeSoma = parseInt(quantidade) + 1;
-        this.querySelector(".quant-item").textContent = quantidadeSoma;
+        if (pontos >= preco) {
+            // Atualiza a quantidade do item
+            let quantidadeSoma = parseInt(quantidade) + 1;
+            this.querySelector(".quant-item").textContent = quantidadeSoma;
 
-        // Atualiza o preço do item
-        let novoPreco = parseFloat(preco) + (parseFloat(preco) / 100);
-        this.querySelector(".preco").textContent = truncarDuasCasasDecimais(novoPreco);
+            // Atualiza o preço do item
+            let novoPreco = parseFloat(preco) + (parseFloat(preco) / 100);
+            this.querySelector(".preco").textContent = truncarDuasCasasDecimais(novoPreco);
+
+            // Atualiza a quantidade total de pontos depois da compra
+            pontos -= preco
+            document.getElementById('pontuacao').innerText = 'Pontos: ' + truncarDuasCasasDecimais(pontos);
+        }
     })
 })
