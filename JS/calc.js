@@ -1,3 +1,8 @@
+// Função para truncar com duas casas decimais
+function truncarDuasCasasDecimais(num) {
+    return Math.trunc(num * 100) / 100;
+}
+
 let pontos = 0;
 
 document.getElementById('pizza').addEventListener('click', function() {
@@ -21,3 +26,22 @@ document.getElementById('pizza').addEventListener('click', function() {
         pontosGanhos.remove();
     }, 1000);
 });
+
+const upgradeItens = document.querySelectorAll(".upgrade-item");
+
+// Adiciona um evento ouvinte a cada item
+upgradeItens.forEach(item => {
+    item.addEventListener("click", function() {
+        // Pega as variáveis de cada item
+        let quantidade = this.querySelector(".quant-item").textContent;
+        let preco = this.querySelector(".preco").textContent;
+
+        // Atualiza a quantidade do item
+        let quantidadeSoma = parseInt(quantidade) + 1;
+        this.querySelector(".quant-item").textContent = quantidadeSoma;
+
+        // Atualiza o preço do item
+        let novoPreco = parseFloat(preco) + (parseFloat(preco) / 100);
+        this.querySelector(".preco").textContent = truncarDuasCasasDecimais(novoPreco);
+    })
+})
