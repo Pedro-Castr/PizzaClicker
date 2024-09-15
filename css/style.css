@@ -12,8 +12,9 @@
 }
 
 body {
-    background-image: url(../Imagens/backgroundPizza.jpg);
-    background-size: contain;
+    background-image: url(../Imagens/pizzaria-bg.webp);
+    background-repeat: no-repeat;
+    background-position: center center;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
@@ -45,6 +46,7 @@ header > h1 {
 #pps {
     color: #ffffff;
     font-size: 1.1em;
+    margin-bottom: 10px;
 }
 
 #pizza img {

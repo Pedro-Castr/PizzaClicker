@@ -1,13 +1,8 @@
-// Função para truncar com duas casas decimais
-function truncarDuasCasasDecimais(num) {
-    return Math.trunc(num * 100) / 100;
-}
-
 let pontos = 0;
 
 document.getElementById('pizza').addEventListener('click', function() {
     pontos++;
-    document.getElementById('pontuacao').innerText = 'Pontos: ' + truncarDuasCasasDecimais(pontos);
+    document.getElementById('pontuacao').innerText = 'Pontos: ' + Math.trunc(pontos);
 
     // Cria o elemento para mostrar o valor adicionado
     const pontosGanhos = document.createElement('div');
@@ -42,12 +37,12 @@ upgradeItens.forEach(item => {
             this.querySelector(".quant-item").textContent = quantidadeSoma;
 
             // Atualiza o preço do item
-            let novoPreco = parseFloat(preco) + (parseFloat(preco) / 100);
-            this.querySelector(".preco").textContent = truncarDuasCasasDecimais(novoPreco);
+            let novoPreco = parseFloat(preco) * 1.2;
+            this.querySelector(".preco").textContent = Math.trunc(novoPreco);
 
             // Atualiza a quantidade total de pontos depois da compra
             pontos -= preco
-            document.getElementById('pontuacao').innerText = 'Pontos: ' + truncarDuasCasasDecimais(pontos);
+            document.getElementById('pontuacao').innerText = 'Pontos: ' + Math.trunc(pontos);
         }
     })
 })
