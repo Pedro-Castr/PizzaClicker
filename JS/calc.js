@@ -81,7 +81,7 @@ function calculaPPS() {
 function incrementarPontos() {
     calculaPPS();
     pontos += pontosPorSegundo;
-    atualizaPontos();  // Atualiza a exibição dos pontos
+    atualizaPontos();
 }
 
 // Inicia o sistema de geração de pontos, incrementando a cada segundo
