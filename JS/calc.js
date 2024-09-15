@@ -57,7 +57,9 @@ upgradeItens.forEach(item => {
 // Definindo a taxa de geração de pontos por item
 const pontosPorItem = {
     'Massa Macia': 0.1,
-    'Rolo de Pizza': 1
+    'Rolo de Pizza': 1,
+    'Molho Picante': 10,
+    'Pizza Doce': 100
 };
 
 // Função para calcular a quantidade de pontos gerados por segundo
