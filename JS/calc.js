@@ -77,7 +77,7 @@ upgradeItens.forEach(item => {
             this.querySelector(".quant-item").textContent = quantidadeSoma;
 
             // Atualiza o preço do item
-            let novoPreco = parseFloat(preco) * 1.2;
+            let novoPreco = parseFloat(preco) * 1.7;
             this.querySelector(".preco").textContent = Math.trunc(novoPreco);
 
             // Atualiza a quantidade total de pontos depois da compra
