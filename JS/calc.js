@@ -4,10 +4,42 @@ let pontosPorSegundo = 0;
 // Inicia o sistema de geração de pontos, incrementando a cada segundo
 setInterval(incrementarPontos, 1000);
 
+// Definindo a taxa de geração de pontos por item
+const pontosPorItem = {
+    'Massa Macia': 1,
+    'Rolo de Pizza': 10,
+    'Molho Picante': 100,
+    'Pizza Doce': 1000
+};
+
+const upgradeItens = document.querySelectorAll(".upgrade-item");
+
 // Função para atualizar os pontos na tela
 function atualizaPontos() {
     document.getElementById('pontuacao').innerText = 'Pizzas: ' + Math.trunc(pontos);
-    document.getElementById("pps").innerText = "Pizzas por Segundo: " + pontosPorSegundo.toFixed(1);
+    document.getElementById("pps").innerText = "Pizzas por Segundo: " + pontosPorSegundo;
+    mudaCorTexto()
+}
+
+function mudaCorTexto() {
+    upgradeItens.forEach(item => {
+        const preco = parseFloat(item.querySelector(".preco").textContent);
+
+        const nome = item.querySelector(".nome");
+        const txtPreco = item.querySelector('.preco');
+        const quantidade = item.querySelector('.quant-item');
+
+        if (pontos >= preco) {
+            nome.style.color = '#158615';
+            txtPreco.style.color = '#158615';
+            quantidade.style.color = '#158615';
+
+        } else {
+            nome.style.color = '#9e1b1b';
+            txtPreco.style.color = '#9e1b1b';
+            quantidade.style.color = '#9e1b1b';
+        }
+    })
 }
 
 document.getElementById('pizza').addEventListener('click', function() {
@@ -32,8 +64,6 @@ document.getElementById('pizza').addEventListener('click', function() {
     }, 1000);
 });
 
-const upgradeItens = document.querySelectorAll(".upgrade-item");
-
 // Adiciona um evento ouvinte a cada item
 upgradeItens.forEach(item => {
     item.addEventListener("click", function() {
@@ -54,16 +84,10 @@ upgradeItens.forEach(item => {
             pontos -= preco
             document.getElementById('pontuacao').innerText = 'Pontos: ' + Math.trunc(pontos);
         }
+
+        mudaCorTexto();
     })
 })
-
-// Definindo a taxa de geração de pontos por item
-const pontosPorItem = {
-    'Massa Macia': 1,
-    'Rolo de Pizza': 10,
-    'Molho Picante': 100,
-    'Pizza Doce': 1000
-};
 
 // Função para calcular a quantidade de pontos gerados por segundo
 function calculaPPS() {
@@ -86,10 +110,3 @@ function incrementarPontos() {
     pontos += pontosPorSegundo;
     atualizaPontos();
 }
-
-
-
-// Atualiza os pontos na tela ao carregar a página
-document.addEventListener('DOMContentLoaded', function() {
-    atualizarPontosNaTela();
-})

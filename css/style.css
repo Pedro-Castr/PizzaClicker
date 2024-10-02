@@ -6,11 +6,6 @@
     box-sizing: border-box;
 }
 
-:root {
-    --vermelho: #9e1b1b;
-    --verde: #158615;
-}
-
 body {
     background-image: url(../Imagens/pizzaria-bg.webp);
     background-repeat: no-repeat;
@@ -137,13 +132,15 @@ header > h1 {
 .upgrade-item > .descricao > .nome {
     font-size: 1.5em;
     font-weight: bold;
-    color: var(--vermelho);
+    color: #9e1b1b;
+    transition: color 0.5s ease;
 }
 
 .upgrade-item > .descricao > .preco {
     padding-top: 10px;
     font-size: 1.2em;
-    color: var(--vermelho);
+    color: #9e1b1b;
+    transition: color 0.5s ease;
 }
 
 .upgrade-item > .quantidade {
@@ -156,5 +153,6 @@ header > h1 {
 .upgrade-item > .quantidade > .quant-item {
     font-size: 2em;
     font-weight: bold;
-    color: var(--vermelho);
+    color: #9e1b1b;
+    transition: color 0.5s ease;
 }
