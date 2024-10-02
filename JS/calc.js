@@ -1,6 +1,9 @@
 let pontos = 0;
 let pontosPorSegundo = 0;
 
+// Inicia o sistema de geração de pontos, incrementando a cada segundo
+setInterval(incrementarPontos, 1000);
+
 // Função para atualizar os pontos na tela
 function atualizaPontos() {
     document.getElementById('pontuacao').innerText = 'Pizzas: ' + Math.trunc(pontos);
@@ -56,10 +59,10 @@ upgradeItens.forEach(item => {
 
 // Definindo a taxa de geração de pontos por item
 const pontosPorItem = {
-    'Massa Macia': 0.1,
-    'Rolo de Pizza': 1,
-    'Molho Picante': 10,
-    'Pizza Doce': 100
+    'Massa Macia': 1,
+    'Rolo de Pizza': 10,
+    'Molho Picante': 100,
+    'Pizza Doce': 1000
 };
 
 // Função para calcular a quantidade de pontos gerados por segundo
@@ -84,8 +87,7 @@ function incrementarPontos() {
     atualizaPontos();
 }
 
-// Inicia o sistema de geração de pontos, incrementando a cada segundo
-setInterval(incrementarPontos, 1000);
+
 
 // Atualiza os pontos na tela ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
