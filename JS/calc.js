@@ -6,10 +6,10 @@ setInterval(incrementarPontos, 1000);
 
 // Definindo a taxa de geração de pontos por item
 const pontosPorItem = {
-    'Massa Macia': 1,
-    'Rolo de Pizza': 10,
-    'Molho Picante': 100,
-    'Pizza Doce': 1000
+    'Massa Macia': 0.1,
+    'Rolo de Pizza': 1,
+    'Molho Picante': 10,
+    'Pizza Doce': 100
 };
 
 const upgradeItens = document.querySelectorAll(".upgrade-item");
@@ -77,7 +77,7 @@ upgradeItens.forEach(item => {
             this.querySelector(".quant-item").textContent = quantidadeSoma;
 
             // Atualiza o preço do item
-            let novoPreco = parseFloat(preco) * 1.7;
+            let novoPreco = parseFloat(preco) + (parseFloat(preco) * 0.2);
             this.querySelector(".preco").textContent = Math.trunc(novoPreco);
 
             // Atualiza a quantidade total de pontos depois da compra
