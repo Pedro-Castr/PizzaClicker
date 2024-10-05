@@ -1,5 +1,15 @@
 @charset "UTF-8";
 
+@font-face {
+    font-family: "PlayFair";
+    src: url(../Fonts/PlayfairDisplay-Regular.ttf);
+}
+
+@font-face {
+    font-family: "Lato";
+    src: url(../Fonts/Lato-Regular.ttf);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -10,7 +20,7 @@ body {
     background-image: url(../Imagens/pizzaria-bg.webp);
     background-repeat: no-repeat;
     background-position: center center;
-    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-family: "Lato";
 }
 
 header {
@@ -21,6 +31,7 @@ header {
 }
 
 header > h1 {
+    font-family: "Playfair";
     font-size: 2.2em;
     font-style: italic;
     color: #ffffff;
