@@ -8,8 +8,8 @@ setInterval(incrementarPontos, 1000);
 const pontosPorItem = {
     'Massa Macia': 0.1,
     'Rolo de Pizza': 1,
-    'Molho Picante': 10,
-    'Pizza Doce': 100
+    'Molho Picante': 8,
+    'Pizza Doce': 50
 };
 
 const upgradeItens = document.querySelectorAll(".upgrade-item");
